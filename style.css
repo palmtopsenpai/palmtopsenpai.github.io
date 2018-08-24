@@ -1,0 +1,91 @@
+* {
+	box-sizing: border-box;
+}
+
+html {
+	font-family: 'Roboto', sans-serif;
+	font-size: 16px;
+}
+
+body {
+	margin: 0;
+}
+
+header {
+	background-color: #fff;
+	min-height: 60px;
+}
+
+nav a {
+	position: relative;
+	margin: 20px 40px;
+	text-decoration: none;
+}
+
+nav a:hover::before {
+	position: absolute;
+	top: 1.2em;
+	content: "";
+	height: 2px;
+	width: 100%;
+	background-color: skyblue;
+}
+
+footer {
+	background-color: #fff;
+	min-height: 80px;
+}
+
+#welcome h1 {
+	margin: 0 0 0 1em;
+	font-size: 1em;
+	font-weight: 100;
+	text-indent: -1em;
+}
+
+#welcome h1::first-line {
+	font-size: 3em;
+}
+
+.heading {
+	margin: 1rem 0 3rem 0;
+	font-size: 8em;
+	font-weight: 100;
+}
+
+.subheading {
+	font-size: 1.2rem;
+	font-weight: 400;
+	width: 60%;
+	margin: 0 auto;
+}
+
+.flex-row {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.container {
+	padding: 40px;
+}
+
+#welcome {
+	background-color: skyblue;
+	min-height: 900px;
+	font-size: 6rem;
+	color: #fff;
+}
+
+#aboutme {
+	background-color: #fbfbfb;
+	min-height: 900px;
+	text-align: center;
+	color: #000;
+}
+
+#formalresume {
+	background-color: #fbfbfb;
+	min-height: 900px;
+	text-align: center;
+	color: #000;
+}
