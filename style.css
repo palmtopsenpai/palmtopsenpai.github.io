@@ -5,6 +5,7 @@
 html {
 	font-family: 'Roboto', sans-serif;
 	font-size: 16px;
+	color: #111111;
 }
 
 body {
@@ -17,23 +18,30 @@ header {
 }
 
 nav a {
+	color: inherit;
 	position: relative;
 	margin: 20px 40px;
 	text-decoration: none;
+	transition: all 2s ease-in-out;
 }
 
-nav a:hover::before {
+nav a::before {
 	position: absolute;
 	top: 1.2em;
 	content: "";
 	height: 2px;
-	width: 100%;
+	width: 0;
 	background-color: skyblue;
+	transition: width .1s ease-in
+}
+
+nav a:hover::before {
+	width: 100%;
 }
 
 footer {
-	background-color: #fff;
-	min-height: 80px;
+	background-color: skyblue;
+	min-height: 60px;
 }
 
 #welcome h1 {
@@ -47,10 +55,15 @@ footer {
 	font-size: 3em;
 }
 
+.current-page {
+	color: skyblue;
+}
+
 .heading {
-	margin: 1rem 0 3rem 0;
+	margin: 1rem 0 2rem 0;
 	font-size: 8em;
 	font-weight: 100;
+	text-align: center;
 }
 
 .subheading {
@@ -58,6 +71,7 @@ footer {
 	font-weight: 400;
 	width: 60%;
 	margin: 0 auto;
+	text-align: center;
 }
 
 .flex-row {
@@ -77,15 +91,26 @@ footer {
 }
 
 #aboutme {
-	background-color: #fbfbfb;
+	background-color: #fafafa;
 	min-height: 900px;
-	text-align: center;
-	color: #000;
 }
 
-#formalresume {
-	background-color: #fbfbfb;
+#resume {
+	background-color: #fafafa;
 	min-height: 900px;
-	text-align: center;
-	color: #000;
+}
+
+.resume-content {
+
+}
+
+.content-item {
+	margin: 2rem 0;
+}
+
+.content-heading {
+	font-size: 3rem;
+	position: relative;
+	display: inline;
+	border-bottom: 5px solid skyblue;
 }
