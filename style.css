@@ -14,10 +14,51 @@ body {
     padding: 0;
 }
 
+.bg-white {
+	background-color: #fff;
+}
+
+.bg-skyblue {
+	background-color: skyblue;
+}
+
+.white {
+	color: #fff;
+}
+
+.skyblue {
+	color: skyblue;
+}
+
+.float-icon {
+	float: left;
+	margin-bottom: 1rem;
+	margin-right: 1rem;
+}
+
 .container {
     width: 80%;
     margin: auto;
     overflow: hidden;
+}
+
+.icon-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+	width: 100px;
+	height: 100px;
+	font-size: 4rem;
+}
+
+.section-container {
+	background-color: #fbfbfb;
+    padding: 2rem 0 4rem 0;
+}
+
+.icon-container > .icon {
+	font-size: inherit;
 }
 
 .section-header {
@@ -77,10 +118,6 @@ nav ul li a:hover::before {
     width: 100%;
 }
 
-.current-page {
-    color: skyblue;
-}
-
 /* Footer */
 footer {
     min-height: 60px;
@@ -105,41 +142,14 @@ footer {
     font-size: 1.8em;
 }
 
-#aboutme {
-    background-color: #fbfbfb;
-    padding: 2rem 0 4rem 0;
-}
-
-.icons {
+#aboutme-icons {
 	display: flex;
 	justify-content: space-between;
 	max-width: 750px;
 	margin: 3rem auto 0 auto;
 }
 
-.icons div {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	background-color: skyblue;
-	border-radius: 50%;
-	width: 100px;
-	height: 100px;
-	font-size: 4rem;
-}
-
-.icons div i {
-	color: #fff;
-	font-size: inherit;
-}
-
 /* Resume */
-#resume {
-    background-color: #fbfbfb;
-    padding: 2rem 0 4rem 0;
-}
-
-
 .resume-container {
     display: flex;
     flex-wrap: wrap;
@@ -162,11 +172,6 @@ footer {
 }
 
 /* Projects */
-#projects {
-	background-color: #fbfbfb;
-    padding: 2rem 0 4rem 0;
-}
-
 .projects-box {
 	max-width: 1100px;
 	min-height: 230px;
@@ -187,34 +192,13 @@ footer {
 	border-bottom: 2px solid #fff;
 }
 
-.image-container {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	float: left;
-	font-size: 4rem;
-	margin-right: 1rem;
-	background-color: #fff;
-	border-radius: 50%;
-	width: 100px;
-	height: 100px;
-}
-
 .projects-box p {
 	color: #fff;
 	max-width: 900px;
 }
 
-.image-container i {
-	color: skyblue;
-	font-size: inherit;
-}
-
 /* Contact */
-#contact {
-	background-color: #fbfbfb;
-    padding: 2rem 0 4rem 0;
-}
+
 
 /* Media */
 @media (max-width: 999px) {
@@ -263,11 +247,11 @@ footer {
         font-size: 1.5em;
 	}
 
-	.icons {
+	#aboutme-icons {
 		justify-content: space-around;
 	}
 	
-	.icons div {
+	.icon-container {
 		width: 75px;
 		height: 75px;
 		font-size: 3rem;
@@ -275,11 +259,5 @@ footer {
 
     .resume-container-header {
         font-size: 2rem;
-	}
-	
-	.image-container {
-		width: 75px;
-		height: 75px;
-		font-size: 3rem;
 	}
 }
