@@ -3,15 +3,20 @@
 }
 
 /* Global */
+
 html {
+    height: 100%;
     font-family: 'Roboto', sans-serif;
-	font-size: 16px;
 	color: #111111;
 }
 
 body {
     margin: 0;
     padding: 0;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #fcfcfc;
 }
 
 .bg-white {
@@ -19,7 +24,7 @@ body {
 }
 
 .bg-skyblue {
-	background-color: skyblue;
+	background-color: #76cbec;
 }
 
 .white {
@@ -27,7 +32,7 @@ body {
 }
 
 .skyblue {
-	color: skyblue;
+	color: #76cbec;
 }
 
 .float-icon {
@@ -50,7 +55,6 @@ body {
 .container {
     width: 80%;
     margin: auto;
-    overflow: hidden;
 }
 
 .icon-container {
@@ -64,7 +68,6 @@ body {
 }
 
 .section-container {
-	background-color: #fbfbfb;
     padding: 2rem 0 4rem 0;
 }
 
@@ -91,8 +94,10 @@ h1, h2, h3, h4 {
 
 /* Header and Nav */
 header {
-    background-color: #fff;
+    position: relative;
+    z-index: 1;
     padding: 1rem 0;
+    box-shadow: 0 3px 20px 0 rgba(0, 0, 0, .1);
 }
 
 nav ul {
@@ -121,7 +126,7 @@ nav ul li a::before {
 	content: "";
 	height: 2px;
 	width: 0;
-	background-color: skyblue;
+	background-color: #76cbec;
 	transition: width .1s ease-in
 }
 
@@ -131,26 +136,37 @@ nav ul li a:hover::before {
 
 /* Footer */
 footer {
+    margin-top: auto;
     min-height: 60px;
-    background-color: skyblue;
 }
 
 /* Home */
 #welcome {
-    background-color: skyblue;
     padding: 4rem 0 6rem 0;
 }
 
 #welcome h1 {
-    color: #fff;
     font-size: 6rem;
     font-weight: 100;
-    text-indent: -1em;
-    margin-left: 1em;
+    position: relative;
 }
 
-#welcome h1::first-line {
+#welcome h1 span {
+    display: block;
+}
+
+#welcome-firstline {
     font-size: 1.8em;
+    position: inherit;
+    margin-left: -100px;
+    opacity: 0;
+    animation: 1.5s ease-out 0.1s 1 normal forwards welcome-animation;
+}
+
+#welcome-secondline {
+    position: inherit;
+    opacity: 0;
+    animation: 1.5s ease-out 1s 1 normal forwards welcome-animation;
 }
 
 #aboutme-icons {
@@ -170,7 +186,7 @@ footer {
     flex-basis: 100%;
     font-size: 3rem;
     font-weight: 700;
-    border-bottom: 2px solid skyblue;
+    border-bottom: 2px solid #76cbec;
 }
 
 .resume-box {
@@ -183,33 +199,55 @@ footer {
 }
 
 /* Projects */
-.projects-box {
-	max-width: 1100px;
-	min-height: 230px;
-	padding: 2rem;
-	border-radius: 5px;
-	background-color: skyblue;
-	margin-bottom: 2rem;
+.projects-flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
 }
 
-.projects-box:nth-of-type(2n) {
-	margin-left: auto;
+.projects-box {
+	max-width: 600px;
+	padding: 2rem;
+	border-radius: 5px;
+    margin: 1rem;
 }
 
 .projects-title {
 	font-size: 2rem;
-	font-weight: 700;
-	color: #fff;
+    font-weight: 700;
+    margin-top: 0;
 	border-bottom: 2px solid #fff;
 }
 
-.projects-box p {
-	color: #fff;
-	max-width: 900px;
+.btn-container {
+    display: flex;
+    justify-content: center;
 }
 
 /* Contact */
 
+/* Animation */
+@keyframes welcome-animation {
+    0%      {left: 0;
+            opacity: 0;}
+    100%    {left: 100px;
+            opacity: 1;}
+}
+
+@keyframes slidein-right {
+    0%      {left: -50px;
+            opacity: 0;}
+    100%    {left: 0;
+            opacity: 1;}
+}
+
+@keyframes slidein-left {
+    0%      {right: 50px;
+            opacity: 0;}
+    100%    {right: 0;
+            opacity: 1;}
+}
 
 /* Media */
 @media (max-width: 999px) {
@@ -223,14 +261,16 @@ footer {
 
     #welcome h1 {
         font-size: 4rem;
-        text-indent: 0;
-        margin-left: 0;
         text-align: center;
+        position: static;
+    }
+
+    #welcome-firstline {
+        margin-left: 0;
     }
 
     .resume-container-header {
         font-size: 2.5rem;
-        font-weight: 700;
     }
 }
 
@@ -249,12 +289,9 @@ footer {
 
     #welcome h1 {
         font-size: 3rem;
-        text-indent: 0;
-        margin-left: 0;
-        text-align: center;
     }
 
-    #welcome h1::first-line {
+    #welcome-firstline {
         font-size: 1.5em;
 	}
 
